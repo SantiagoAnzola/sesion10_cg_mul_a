@@ -72,17 +72,23 @@ function init() {
   // position the cube
   dim = 5;
   delta = 9;
-
+  angulo=Math.PI/2;
   Cubo = []; // Definir un array unidimensional
+
 
   Cubo.push(cubo(dim, dim, dim, 0x00ff7f, "Standard", false));
   Cubo.push(cubo(dim, dim, dim, 0xffdd00, "Physical", false));
   Cubo.push(cubo(dim, dim, dim, 0xE80000, "Physical", false));
-
-  Cubo[0].translateX(delta);
+  
+  Cubo[0].rotateZ(angulo);//Metodo rotacion en el eje Z
+  Cubo[0].translateX(delta); 
+  Cubo[1].rotateX(angulo);//Metodo rotacion en el eje X
   Cubo[1].translateY(delta);
+  Cubo[2].rotateY(angulo);//Metodo rotacion en el eje Y
   Cubo[2].translateZ(delta);
-  /*
+
+ 
+/*
   La funcion tranlsate, se usa llamando al objeto en cuention. Posteriormente se  define el eje de tranlación. 
   En caso de ser en el eje X  ==> translateX 
   En caso de ser en el eje Y  ==> translateY 
